@@ -10,6 +10,7 @@ namespace Battleship.Engine.Enums
     {
         MISS,
         HIT,
-        HIT_AND_GAME_OVER
+        HIT_AND_GAME_OVER,
+        SUNK
     }
 }

@@ -90,7 +90,7 @@ namespace Battleship.UnitTests
                 new Position(5, 0),
                 _takenShots_OneShotMissing);
 
-            shotResult.Should().Be(Engine.Enums.ShotResult.HIT);
+            shotResult.Should().Be(Engine.Enums.ShotResult.SUNK);
         }
     }
 }

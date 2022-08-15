@@ -25,7 +25,7 @@ namespace Battleship.Engine.Services
                     {
                         ship.IsSunk = true;
 
-                        return IsGameOver(ships) ? ShotResult.HIT_AND_GAME_OVER : ShotResult.HIT;
+                        return IsGameOver(ships) ? ShotResult.HIT_AND_GAME_OVER : ShotResult.SUNK;
                     }
 
                     return ShotResult.HIT;

@@ -24,22 +24,23 @@ namespace BattleShip.Application
                 var userShotPosition = Console.ReadLine();
                 var shotResult = battleShipEngine?.Shoot(userShotPosition);
 
-                if(shotResult == ShotResult.HIT)
+                switch(shotResult)
                 {
-                    Console.WriteLine("Hit!");
-                }
-                else if (shotResult == ShotResult.MISS)
-                {
-                    Console.WriteLine("Miss!");
-                }
-                else if (shotResult == ShotResult.HIT_AND_GAME_OVER)
-                {
-                    Console.WriteLine("Hit! You won, congratulations!");
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Please provide valid input");
+                    case ShotResult.HIT:
+                        Console.WriteLine("Hit!");
+                        break;
+                    case ShotResult.MISS:
+                        Console.WriteLine("Miss!");
+                        break;
+                    case ShotResult.SUNK:
+                        Console.WriteLine("Hit! Ship sunk!");
+                        break;
+                    case ShotResult.HIT_AND_GAME_OVER:
+                        Console.WriteLine("Hit! You won, congratulations!");
+                        return;
+                    default:
+                        Console.WriteLine("Please provide valid input");
+                        break;
                 }
             }
         }
